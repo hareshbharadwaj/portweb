@@ -30,21 +30,32 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 150;
+      const scrollPosition = window.scrollY + 200; // Increased offset for better detection
 
+      let newActiveSection = 'home'; // Default to home
+      
       sections.forEach((section, index) => {
         if (section) {
           const { offsetTop, offsetHeight } = section;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(navItems[index].id);
+          // Check if we're in the middle 50% of the section for better accuracy
+          const sectionMiddle = offsetTop + (offsetHeight * 0.25);
+          const sectionEnd = offsetTop + (offsetHeight * 0.75);
+          
+          if (scrollPosition >= sectionMiddle && scrollPosition < sectionEnd) {
+            newActiveSection = navItems[index].id;
           }
         }
       });
+      
+      // Only update if different to prevent unnecessary re-renders
+      if (newActiveSection !== activeSection) {
+        setActiveSection(newActiveSection);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeSection]);
 
   return (
     <motion.nav

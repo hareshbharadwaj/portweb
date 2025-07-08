@@ -99,6 +99,12 @@ Changelog:
 - July 08, 2025: Integrated LOR documents into unified timeline structure
 - July 08, 2025: Implemented Jarvis-like AI background animations with scanning lines
 - July 08, 2025: Added relevant video/image assets to project cards
+- July 08, 2025: Fixed TypeScript errors in project modal with proper type casting
+- July 08, 2025: Enhanced navbar scroll detection accuracy to prevent animation issues
+- July 08, 2025: Added chevron arrow rotation animations in project category cards
+- July 08, 2025: Enhanced Jarvis background with pulsing orange circles for Iron Man effect
+- July 08, 2025: Fixed credential document links to proper LOR files
+- July 08, 2025: Removed duplicate timeline and kept unified experience layout
 ```
 
 ## User Preferences

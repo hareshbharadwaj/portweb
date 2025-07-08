@@ -46,6 +46,17 @@ export function JarvisBackground() {
       opacity: number;
     }> = [];
 
+    const circles: Array<{
+      x: number;
+      y: number;
+      radius: number;
+      pulsePhase: number;
+      pulseSpeed: number;
+      opacity: number;
+      vx: number;
+      vy: number;
+    }> = [];
+
     // Create initial particles
     for (let i = 0; i < 50; i++) {
       particles.push({
@@ -70,6 +81,20 @@ export function JarvisBackground() {
       });
     }
 
+    // Create orange circles (Jarvis-style)
+    for (let i = 0; i < 12; i++) {
+      circles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: 15 + Math.random() * 35,
+        pulsePhase: Math.random() * Math.PI * 2,
+        pulseSpeed: 0.02 + Math.random() * 0.03,
+        opacity: 0.15 + Math.random() * 0.25,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3
+      });
+    }
+
     // Draw hexagon
     const drawHexagon = (x: number, y: number, size: number, rotation: number, opacity: number) => {
       ctx.save();
@@ -87,6 +112,35 @@ export function JarvisBackground() {
       }
       ctx.closePath();
       ctx.stroke();
+      ctx.restore();
+    };
+
+    // Draw circle with pulsing effect
+    const drawCircle = (x: number, y: number, radius: number, pulsePhase: number, opacity: number) => {
+      const pulseFactor = 1 + Math.sin(pulsePhase) * 0.3;
+      const actualRadius = radius * pulseFactor;
+      
+      ctx.save();
+      ctx.globalAlpha = opacity;
+      
+      // Outer circle (orange glow)
+      const gradient = ctx.createRadialGradient(x, y, 0, x, y, actualRadius);
+      gradient.addColorStop(0, 'rgba(255, 140, 0, 0.8)'); // Orange center
+      gradient.addColorStop(0.7, 'rgba(255, 165, 0, 0.3)'); // Orange fade
+      gradient.addColorStop(1, 'rgba(255, 140, 0, 0)'); // Transparent edge
+      
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(x, y, actualRadius, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Inner circle border
+      ctx.strokeStyle = `rgba(255, 140, 0, ${opacity * 0.8})`;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(x, y, actualRadius * 0.6, 0, Math.PI * 2);
+      ctx.stroke();
+      
       ctx.restore();
     };
 
@@ -178,6 +232,25 @@ export function JarvisBackground() {
         if (hexagon.y > canvas.height + 50) hexagon.y = -50;
 
         drawHexagon(hexagon.x, hexagon.y, hexagon.size, hexagon.rotation, hexagon.opacity);
+      });
+
+      // Update and draw orange circles
+      circles.forEach(circle => {
+        // Update position
+        circle.x += circle.vx;
+        circle.y += circle.vy;
+        
+        // Update pulse phase
+        circle.pulsePhase += circle.pulseSpeed;
+        
+        // Wrap around screen
+        if (circle.x < -circle.radius) circle.x = canvas.width + circle.radius;
+        if (circle.x > canvas.width + circle.radius) circle.x = -circle.radius;
+        if (circle.y < -circle.radius) circle.y = canvas.height + circle.radius;
+        if (circle.y > canvas.height + circle.radius) circle.y = -circle.radius;
+        
+        // Draw circle
+        drawCircle(circle.x, circle.y, circle.radius, circle.pulsePhase, circle.opacity);
       });
 
       // Scanning lines effect

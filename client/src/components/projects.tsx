@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, ShoppingCart, Eye, Satellite, Utensils, Smartphone, Code, Brain } from 'lucide-react';
+import { ArrowRight, ChevronDown, ChevronRight, ShoppingCart, Eye, Satellite, Utensils, Smartphone, Code, Brain } from 'lucide-react';
 import { ProjectModal } from './project-modal';
 import type { Project } from '@shared/schema';
 
@@ -141,9 +141,11 @@ export function Projects() {
                       {categoryProjects.length} project{categoryProjects.length > 1 ? 's' : ''}
                     </Badge>
                     <div className="mt-3">
-                      <ArrowRight className={`h-4 w-4 mx-auto transition-transform ${
-                        isExpanded ? 'rotate-90' : ''
-                      } animate-bounce-gentle`} />
+                      {isExpanded ? (
+                        <ChevronDown className="h-4 w-4 mx-auto transition-all duration-300 animate-bounce-gentle" />
+                      ) : (
+                        <ChevronRight className="h-4 w-4 mx-auto transition-all duration-300 animate-bounce-gentle" />
+                      )}
                     </div>
                   </CardContent>
                 </Card>

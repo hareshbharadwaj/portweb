@@ -8,25 +8,25 @@ export function Experience() {
   
   const experienceCredentials = [
     {
-      title: "Corizo LinkedIn Profile",
+      title: "Corizo intenship certificate",
       description: "Professional LinkedIn presence showcasing Corizo internship",
       imageUrl: "/attached_assets/corizo li _1751970802230.jpg",
       color: "text-blue-400"
     },
     {
-      title: "Corizo Offer Letter",
-      description: "Official offer letter from Corizo Edutech",
-      imageUrl: "/attached_assets/li corizo Offer_Letter[1]_(1)[1]_1751970779198.pdf",
+      title: "Corizo LOR Document",
+      description: "Letter of Recommendation from Corizo Edutech",
+      imageUrl: "/attached_assets/LOR Corizo_1751970728640.pdf",
       color: "text-indigo-400"
     },
     {
-      title: "Prodigy InfoTech Certificate",
-      description: "Completion certificate from Prodigy InfoTech internship",
-      imageUrl: "/attached_assets/prodigy infotech Certificate_1751970832993.pdf",
+      title: "Prodigy InfoTech LOR",
+      description: "Letter of Recommendation from Prodigy InfoTech",
+      imageUrl: "/attached_assets/prodigy infotech Letter of Recommendation_1751970745885.pdf",
       color: "text-purple-400"
     },
     {
-      title: "Campus Training",
+      title: "Campus ambassador certificate",
       description: "Campus-based technical training certification",
       imageUrl: "/attached_assets/campuss_1751968636489.png",
       color: "text-pink-400"
@@ -101,33 +101,8 @@ export function Experience() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {/* Timeline */}
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-indigo-500 to-purple-500"></div>
-            
-            {experiences.map((exp, index) => (
-              <div key={index} className="mb-12 flex flex-col md:flex-row items-start md:items-center">
-                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:order-2 md:pl-8'} mb-4 md:mb-0`}>
-                  <Card className="bg-gray-800 border-gray-700 ml-8 md:ml-0">
-                    <CardContent className="p-6">
-                      <h3 className={`text-xl font-bold mb-2 ${exp.color}`}>
-                        {exp.title}
-                      </h3>
-                      <p className="text-gray-300 mb-2">{exp.company}</p>
-                      <p className="text-sm text-gray-400 mb-4">{exp.period}</p>
-                      <p className="text-gray-300">{exp.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center">
-                  <exp.icon className="h-4 w-4 text-white" />
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Integrated Timeline with LOR Documents */}
-          <div className="mt-16">
+          <div>
             <div className="relative">
               {/* Timeline Line */}
               <div className="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-cyan-500 animate-pulse"></div>
