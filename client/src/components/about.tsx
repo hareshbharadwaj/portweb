@@ -6,25 +6,25 @@ export function About() {
     {
       icon: Brain,
       title: 'Machine Learning',
-      description: 'AI & ML Solutions',
+      description: 'AI / ML Solutions',
       color: 'text-indigo-400'
     },
     {
       icon: Eye,
       title: 'Computer Vision',
-      description: 'OpenCV & MediaPipe',
+      description: '| OpenCV | MediaPipe | pycharm ',
       color: 'text-purple-400'
     },
     {
       icon: Code,
-      title: 'Web Development',
-      description: 'Full-Stack Solutions',
+      title: 'Web Design',
+      description: '| React | Streamlit | MySQL | MongoDB ',
       color: 'text-green-400'
     },
     {
       icon: Smartphone,
       title: 'Mobile Development',
-      description: 'Android & Flutter',
+      description: 'Android studio & Flutter',
       color: 'text-blue-400'
     }
   ];
@@ -60,14 +60,14 @@ export function About() {
               <h3 className="text-2xl font-bold mb-6 text-indigo-400">Education</h3>
               <div className="text-left space-y-6">
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">Bachelor of Technology – Information Technology</h4>
+                  <h4 className="text-xl font-semibold text-silver-400 mb-2">Bachelor of Technology – Information Technology</h4>
                   <p className="text-gray-400 mb-1">Saveetha School of Engineering, Thandalam</p>
-                  <p className="text-gray-400 mb-1">2023-2027 | <span className="text-green-400 font-semibold">CGPA: 9.3</span></p>
+                  <p className="text-gray-400 mb-1"> 2023-2027  | <span className="text-yellow-500 font-semibold">CGPA: 9.3</span></p>
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold mb-2">Senior Secondary Education</h4>
                   <p className="text-gray-400 mb-1">GK Shetty Vivekananda Vidyalaya Senior Secondary School</p>
-                  <p className="text-gray-400">2021-2023 | <span className="text-green-400 font-semibold">80%</span></p>
+                  <p className="text-gray-400">2021-2023 | <span className="text-yellow-500 font-semibold">83%</span></p>
                 </div>
               </div>
             </CardContent>

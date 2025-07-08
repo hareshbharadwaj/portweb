@@ -9,14 +9,14 @@ export function Hero() {
           {/* Profile Image - Left on Desktop */}
           <motion.div
             className="flex-shrink-0 order-1 lg:order-1"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9 }}
           >
             <motion.div
               className="relative w-80 h-96 overflow-hidden rounded-lg shadow-2xl"
               whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.5 }}
             >
               <img
                 src="/attached_assets/profilepic.jpg"
@@ -32,7 +32,7 @@ export function Hero() {
             className="flex-1 text-center lg:text-left order-2 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
           >
             {/* Name and Title */}
             <motion.h1
@@ -41,16 +41,16 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <span className="gradient-text">Haresh Bharadwaj R</span>
+              <span className="gradient-text"> Haresh Bharadwaj R</span>
             </motion.h1>
 
             <motion.p
               className="text-xl md:text-2xl text-gray-300 mb-6 font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              transition={{ delay: 0.8, duration: 0.9 }}
             >
-              Full Stack Developer & AI Enthusiast
+              3rd Year B.Tech IT Student | Web & App Designer | AI/ML Enthusiast 
             </motion.p>
 
             {/* Objective/About */}
@@ -58,7 +58,7 @@ export function Hero() {
               className="mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+              transition={{ delay: 1.0, duration: 0.8 }}
             >
               <h3 className="text-lg font-semibold mb-3 text-indigo-400">Objective</h3>
               <p className="text-gray-400 leading-relaxed mb-4">
@@ -66,8 +66,8 @@ export function Hero() {
                 Currently pursuing B.Tech in Computer Science with expertise in modern web technologies.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                Seeking opportunities to contribute to cutting-edge projects while continuously learning and growing 
-                in the field of software development and AI/ML technologies.
+                Seeking opportunities to contribute to real world cutting-edge projects while continuously learning and growing 
+                in the field of software designing and AI/ML technologies.
               </p>
             </motion.div>
 
@@ -76,7 +76,7 @@ export function Hero() {
               className="mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
+              transition={{ delay: 1.3, duration: 0.8 }}
             >
               <a
                 href="/attached_assets/CV.pdf"
@@ -94,7 +94,7 @@ export function Hero() {
               className="flex justify-center lg:justify-start space-x-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
             >
               <a
                 href="https://linkedin.com/in/haresh-bharadwaj-r-566556229"

@@ -26,25 +26,25 @@ const categoryInfo = {
   'web-development': {
     title: 'Web Development',
     icon: Code,
-    description: 'Full-Stack Solutions',
+    description: '',
     color: 'text-indigo-400'
   },
   'computer-vision': {
     title: 'Computer Vision',
     icon: Eye,
-    description: 'OpenCV & MediaPipe',
-    color: 'text-purple-400'
+    description: '',
+    color: ''
   },
   'machine-learning': {
     title: 'ML Research',
     icon: Brain,
-    description: 'AI & ML Solutions',
+    description: '',
     color: 'text-blue-400'
   },
   'mobile-development': {
     title: 'App Development',
     icon: Smartphone,
-    description: 'Android & Flutter',
+    description: '',
     color: 'text-orange-400'
   }
 };

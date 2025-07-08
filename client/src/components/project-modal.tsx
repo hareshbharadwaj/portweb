@@ -26,19 +26,19 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {/* Description */}
           <div>
             <p className="text-gray-300 text-lg leading-relaxed">
-              {project.detailedDescription || project.description}
+              {String(project.detailedDescription || project.description)}
             </p>
           </div>
 
           {/* Features */}
-          {project.features && (
+          {project.features && Array.isArray(project.features) && (
             <div>
               <h3 className="text-xl font-bold text-indigo-400 mb-4">Key Features</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {(project.features as string[]).map((feature, index) => (
                   <div key={index} className="flex items-start text-gray-300">
                     <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>{feature}</span>
+                    <span>{String(feature)}</span>
                   </div>
                 ))}
               </div>
@@ -60,7 +60,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                           {proj.features.map((feature, idx) => (
                             <div key={idx} className="flex items-start text-sm text-gray-400">
                               <CheckCircle className="h-3 w-3 text-green-400 mr-2 mt-1 flex-shrink-0" />
-                              <span>{feature}</span>
+                              <span>{String(feature)}</span>
                             </div>
                           ))}
                         </div>
@@ -86,7 +86,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                         {app.features.map((feature, idx) => (
                           <div key={idx} className="flex items-start text-sm text-gray-400">
                             <CheckCircle className="h-3 w-3 text-green-400 mr-2 mt-1 flex-shrink-0" />
-                            <span>{feature}</span>
+                            <span>{String(feature)}</span>
                           </div>
                         ))}
                       </div>
@@ -109,7 +109,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   {(project.userFeatures as string[]).map((feature, index) => (
                     <div key={index} className="flex items-start text-gray-300">
                       <User className="h-4 w-4 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                      <span>{feature}</span>
+                      <span>{String(feature)}</span>
                     </div>
                   ))}
                 </div>
@@ -123,7 +123,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   {(project.adminFeatures as string[]).map((feature, index) => (
                     <div key={index} className="flex items-start text-gray-300">
                       <Cog className="h-4 w-4 text-blue-400 mr-3 mt-1 flex-shrink-0" />
-                      <span>{feature}</span>
+                      <span>{String(feature)}</span>
                     </div>
                   ))}
                 </div>
@@ -139,7 +139,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 {(project.methodology as string[]).map((method, index) => (
                   <div key={index} className="flex items-start text-gray-300">
                     <Settings className="h-4 w-4 text-blue-400 mr-3 mt-1 flex-shrink-0" />
-                    <span>{method}</span>
+                    <span>{String(method)}</span>
                   </div>
                 ))}
               </div>
@@ -156,7 +156,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   variant="secondary"
                   className="bg-purple-600/20 text-purple-400 hover:bg-purple-600/30"
                 >
-                  {tech}
+                  {String(tech)}
                 </Badge>
               ))}
             </div>

@@ -58,7 +58,7 @@ export function Hero() {
               className="mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+              transition={{ delay: 0.8, duration: 1.8 }}
             >
               <h3 className="text-lg font-semibold mb-3 text-indigo-400">Objective</h3>
               <p className="text-gray-400 leading-relaxed mb-4">
