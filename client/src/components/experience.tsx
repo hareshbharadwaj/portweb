@@ -10,25 +10,26 @@ export function Experience() {
     {
       title: "Corizo intenship certificate",
       description: "Professional LinkedIn presence showcasing Corizo internship",
-      imageUrl: "/attached_assets/corizo li _1751970802230.jpg",
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140115/corizo_li__1751970802230_igdonc.jpg",
       color: "text-blue-400"
     },
+    
     {
-      title: "Corizo LOR Document",
-      description: "Letter of Recommendation from Corizo Edutech",
-      imageUrl: "/attached_assets/LOR Corizo_1751970728640.pdf",
-      color: "text-indigo-400"
+      title: "Prodigy InfoTech completion certificate",
+      description: "completion from Prodigy InfoTech",
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140111/prodigy_infotech_Certificate_1751970832993_tqtypf.png",
+      color: "text-purple-400"
     },
     {
-      title: "Prodigy InfoTech LOR",
-      description: "Letter of Recommendation from Prodigy InfoTech",
-      imageUrl: "/attached_assets/prodigy infotech Letter of Recommendation_1751970745885.pdf",
-      color: "text-purple-400"
+      title: "Corizo offer letter",
+      description: "offer letterfrom Corizo Edutech",
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752165030/Screenshot_2025-07-10_215951_kks4ap.png",
+      color: "text-indigo-400"
     },
     {
       title: "Campus ambassador certificate",
       description: "Campus-based technical training certification",
-      imageUrl: "/attached_assets/campuss_1751968636489.png",
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140259/campuss_1751968636489_lfwysq.png",
       color: "text-pink-400"
     }
   ];
@@ -57,37 +58,37 @@ export function Experience() {
       title: "Oracle SQL Specialist",
       description: "Oracle Database SQL Certified Specialist",
       color: "text-orange-400",
-      imageUrl: "/attached_assets/oraclespl_1751968622048.png"
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140121/oraclespl_1751968622048_sxztvf.png"
     },
     {
       title: "FreeCodeCamp JavaScript Developer",
       description: "JavaScript Algorithms & Data Structures (Beta)",
       color: "text-yellow-400",
-      imageUrl: "/attached_assets/freejava_1751968636483.png"
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140261/freejava_1751968636483_o895sw.png"
     },
     {
       title: "IBM SQL & Relational DB",
       description: "SQL and Relational Databases 101",
       color: "text-blue-400",
-      imageUrl: "/attached_assets/ibmsql_1751968626175.png"
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140261/ibmsql_1751968626175_iwjdtb.png"
     },
     {
       title: "CISCO Networking & Cybersecurity",
       description: "CCNA: Enterprise Networking, Security, and Automation",
       color: "text-cyan-400",
-      imageUrl: "/attached_assets/networking_1751968636486.png"
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140267/networking_1751968636486_mze3zd.png"
     },
     {
       title: "DevTown Campus Ambassador",
       description: "Leadership & Community",
       color: "text-purple-400",
-      imageUrl: "/attached_assets/campuss_1751968636489.png"
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140259/campuss_1751968636489_lfwysq.png"
     },
     {
       title: "SWAYAM Python Programming",
       description: "Programming in Python - 4 Credit Course",
       color: "text-green-400",
-      imageUrl: "/attached_assets/python_1751968636488.png"
+      imageUrl: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752140116/python_1751968636488_o8qrpv.png"
     }
   ];
 
@@ -131,7 +132,7 @@ export function Experience() {
                     <div className="pl-8">
                       <Card 
                         className="bg-gray-800/50 backdrop-blur-sm border-gray-700/50 cursor-pointer hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-105"
-                        onClick={() => window.open('/attached_assets/LOR Corizo_1751970728640.pdf', '_blank')}
+                        onClick={() => window.open('https://res.cloudinary.com/daajhlxgj/image/upload/v1752140262/LOR_Corizo_1751970728640_abs30v.png', '_blank')}
                       >
                         <CardContent className="p-6">
                           <div className="flex items-center mb-4">
@@ -161,7 +162,7 @@ export function Experience() {
                     
                     <Card 
                       className="bg-gray-800/50 backdrop-blur-sm border-gray-700/50 cursor-pointer hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-105"
-                      onClick={() => window.open('/attached_assets/LOR Corizo_1751970728640.pdf', '_blank')}
+                      onClick={() => window.open('https://res.cloudinary.com/daajhlxgj/image/upload/v1752140262/LOR_Corizo_1751970728640_abs30v.png', '_blank')}
                     >
                       <CardContent className="p-4">
                         <div className="flex items-center">
@@ -190,7 +191,7 @@ export function Experience() {
                     <div className="pr-8">
                       <Card 
                         className="bg-gray-800/50 backdrop-blur-sm border-gray-700/50 cursor-pointer hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-105"
-                        onClick={() => window.open('/attached_assets/prodigy infotech Letter of Recommendation_1751970745885.pdf', '_blank')}
+                        onClick={() => window.open('https://res.cloudinary.com/daajhlxgj/image/upload/v1752140111/prodigy_infotech_Letter_of_Recommendation_1751970745885150401_erlduh.png', '_blank')}
                       >
                         <CardContent className="p-6">
                           <div className="flex items-center mb-4">
@@ -235,7 +236,7 @@ export function Experience() {
                     
                     <Card 
                       className="bg-gray-800/50 backdrop-blur-sm border-gray-700/50 cursor-pointer hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-105"
-                      onClick={() => window.open('/attached_assets/prodigy infotech Letter of Recommendation_1751970745885.pdf', '_blank')}
+                      onClick={() => window.open('https://res.cloudinary.com/daajhlxgj/image/upload/v1752140111/prodigy_infotech_Letter_of_Recommendation_1751970745885150401_erlduh.png', '_blank')}
                     >
                       <CardContent className="p-4">
                         <div className="flex items-center">

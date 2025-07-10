@@ -19,7 +19,7 @@ export function Hero() {
               transition={{ duration: 0.5 }}
             >
               <img
-                src="/attached_assets/profilepic.jpg"
+                src="https://res.cloudinary.com/daajhlxgj/image/upload/v1752134349/WhatsApp_Image_2025-07-08_at_13.00.00_58121156_srgf5p.jpg"
                 alt="Haresh Bharadwaj R"
                 className="w-full h-full object-cover"
               />
@@ -79,8 +79,9 @@ export function Hero() {
               transition={{ delay: 1.3, duration: 0.8 }}
             >
               <a
-                href="/attached_assets/CV.pdf"
+                href="https://res.cloudinary.com/daajhlxgj/image/upload/v1752168508/HARESH_CV_page-0001_lbgumj.jpg"
                 target="_blank"
+                title='Haresh Resume'
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-full hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >

@@ -19,7 +19,7 @@ export function Hero() {
               transition={{ duration: 0.3 }}
             >
               <img
-                src="/attached_assets/profilepic.jpg"
+                src="https://res.cloudinary.com/daajhlxgj/image/upload/v1752134349/WhatsApp_Image_2025-07-08_at_13.00.00_58121156_srgf5p.jpg"
                 alt="Haresh Bharadwaj R"
                 className="w-full h-full object-cover"
               />
@@ -151,12 +151,11 @@ export function Hero() {
                 <Mail size={24} />
               </a>
             </div>
-            <Button
-              onClick={() => window.open('/attached_assets/CV.pdf', '_blank')}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
+            <button
+              onClick={() => window.open('https://res.cloudinary.com/daajhlxgj/image/upload/v1752168508/HARESH_CV_page-0001_lbgumj.jpg', '_blank')}
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
               View Resume
-            </Button>
+            </button>
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@ export class MemStorage implements IStorage {
         links: {
           linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_webdevelopment-ecommerce-homemadeproducts-activity-7332062155262894080-N79g?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2KRVx3fgY",
           github: "https://github.com/hareshbharadwaj/Homemade_Marketplace_web",
-          demo: "/attached_assets/homemade_1751969238298.mp4"
+          demo: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140275/homemade_1751969238298_iiyqku.mp4"
         },
         category: "web-development",
         image: "shopping-cart"
@@ -64,33 +64,11 @@ export class MemStorage implements IStorage {
         links: {
           linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_webdevelopment-firstproject-fullstackdevelopment-activity-7260217850185818112-Q0D5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgy",
           github: "https://github.com/hareshbharadwaj/foodie-app",
-          demo: "/attached_assets/foodie-major project_1751968207216.mp4"
+          demo: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140271/foodie-major_project_1751968207216_mw3ibj.mp4"
         },
         category: "web-development",
-        image: "/attached_assets/foodie-major project_1751968207216.mp4",
-        imageType: "video"
-      },
-      {
-        title: "Frontend Development Showcase",
-        description: "Collection of responsive frontend projects including landing pages, stopwatch, and weather app with live API.",
-        detailedDescription: "A comprehensive collection of frontend projects developed during internship at Prodigy Infotech, demonstrating proficiency in modern web technologies, responsive design, and API integration.",
-        features: [
-          "Responsive design principles",
-          "Modern web technologies",
-          "API integration capabilities",
-          "Interactive user interfaces",
-          "Performance optimization",
-          "Cross-browser compatibility"
-        ],
-        technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery", "Weather API"],
-        links: {
-          linkedin: "", // User will fill this
-          github: "", // User will fill this
-          portfolio: "" // User will fill this
-        },
-        category: "web-development",
-        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&q=80",
-        imageType: "image"
+        image: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140271/foodie-major_project_1751968207216_mw3ibj.mp4",
+        //imageType: "video"
       },
       
       // Computer Vision Projects
@@ -109,11 +87,11 @@ export class MemStorage implements IStorage {
         links: {
           linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_computervision-opencv-mediapipe-activity-7332114830104961025-Hntg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgY",// User will fill this
           github: "https://github.com/hareshbharadwaj/CV_hand_detection", // User will fill this
-          video: "/attached_assets/hand.mp4"
+          video: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140321/hand_ozzep2.mp4"
         },
         category: "computer-vision",
-        image: "/attached_assets/hand.mp4",
-        imageType: "video"
+        image: "https://res.cloudinary.com/dko04npep/video/upload/v1715878604/hand_v0f30w.mp4",
+        //imageType: "video"
       },
       {
         title: "Screen Painter",
@@ -130,11 +108,11 @@ export class MemStorage implements IStorage {
         links: {
           linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_computervision-gesturerecognition-virtualdrawing-activity-7332274282397417474-Hub2?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgY", // User will fill this
           github: "https://github.com/hareshbharadwaj/CV_painter", // User will fill this
-          video: "/attached_assets/paint.mp4"
+          video: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140175/paint_auwt8s.mp4"
         },
         category: "computer-vision",
-        image: "/attached_assets/paint.mp4",
-        imageType: "video"
+        image: "https://res.cloudinary.com/dko04npep/video/upload/v1715878604/paint_f0w00w.mp4",
+       // imageType: "video"
       },
       {
         title: "Snake Game with Hand Control",
@@ -151,11 +129,11 @@ export class MemStorage implements IStorage {
         links: {
           linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_hand-controlled-snake-game-with-opencv-activity-7336788164998479872-scKj?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgY", // User will fill this
           github: "https://github.com/hareshbharadwaj/CV_snake_game", // User will fill this
-          video: "/attached_assets/snake.mp4"
+          video: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140255/snake_llrolb.mp4"
         },
         category: "computer-vision",
-        image: "/attached_assets/snake.mp4",
-        imageType: "video"
+        image: "https://res.cloudinary.com/dko04npep/video/upload/v1715878604/snake_f0w00w.mp4",
+        //imageType: "video"
       },
       {
         title: "Subway Surfers Hand Control",
@@ -172,11 +150,11 @@ export class MemStorage implements IStorage {
         links: {
           linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_computervision-opencv-mediapipe-activity-7339332599707811840-VYjy?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgY", // User will fill this
           github: "https://github.com/hareshbharadwaj/CV_Subway", // User will fill this
-          video: "/attached_assets/subway.mp4"
+          video: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140371/subway_h8zcnw.mp4"
         },
         category: "computer-vision",
-        image: "/attached_assets/subway.mp4",
-        imageType: "video"
+        image: "https://res.cloudinary.com/dko04npep/video/upload/v1715878604/subway_f0w00w.mp4",
+        //imageType: "video"
       },
       
       // Machine Learning Research
