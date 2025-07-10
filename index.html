@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haresh's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Portfolio</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Background Animation -->
+    <canvas id="background-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="https://res.cloudinary.com/daajhlxgj/image/upload/v1752134349/WhatsApp_Image_2025-07-08_at_13.00.00_58121156_srgf5p.jpg" alt="Haresh Bharadwaj R" class="profile-img">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title gradient-text">Haresh Bharadwaj R</h1>
+                <p class="hero-subtitle">3rd Year B.Tech IT Student | Web & App Designer | AI/ML Enthusiast</p>
+                
+                <div class="hero-objective">
+                    <h3>Objective</h3>
+                    <p>Passionate about creating innovative web solutions and exploring the frontiers of artificial intelligence. Currently pursuing B.Tech in Computer Science with expertise in modern web technologies.</p>
+                    <p>Seeking opportunities to contribute to real world cutting-edge projects while continuously learning and growing in the field of software designing and AI/ML technologies.</p>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="https://res.cloudinary.com/daajhlxgj/image/upload/v1752168508/HARESH_CV_page-0001_lbgumj.jpg" target="_blank" class="btn-primary">
+                        <i class="fas fa-file-text"></i>
+                        View Resume
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/haresh-bharadwaj-r-566556229" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/hareshbharadwaj" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:hesh25012006@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title gradient-text">About Me</h2>
+            <p class="about-description">
+                I'm a technically driven Information Technology undergraduate with a passion for solving real-world challenges through innovative technology solutions. My expertise spans across Machine Learning, AI, Computer Vision, and Web Development, with a focus on building AI-based solutions that enhance user experiences.
+            </p>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-brain skill-icon"></i>
+                    <h3>Machine Learning</h3>
+                    <p>AI / ML Solutions</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-eye skill-icon"></i>
+                    <h3>Computer Vision</h3>
+                    <p>| OpenCV | MediaPipe | PyCharm |</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h3>Web Design</h3>
+                    <p>| React | Streamlit | MySQL | MongoDB |</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-mobile-alt skill-icon"></i>
+                    <h3>Mobile Development</h3>
+                    <p>Android Studio & Flutter</p>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <h3>Education</h3>
+                <div class="education-item">
+                    <h4>Bachelor of Technology – Information Technology</h4>
+                    <p>Saveetha School of Engineering, Thandalam</p>
+                    <p>2023-2027 | <span class="highlight">CGPA: 9.3</span></p>
+                </div>
+                <div class="education-item">
+                    <h4>Senior Secondary Education</h4>
+                    <p>GK Shetty Vivekananda Vidyalaya Senior Secondary School</p>
+                    <p>2021-2023 | <span class="highlight">83%</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title gradient-text">Featured Projects</h2>
+            <p class="section-subtitle">Click on each category to explore my projects</p>
+
+            <div class="category-grid">
+                <div class="category-card" data-category="web-development">
+                    <i class="fas fa-code category-icon"></i>
+                    <h3>Web Development</h3>
+                    <span class="project-count">2 projects</span>
+                    <i class="fas fa-chevron-right expand-icon"></i>
+                </div>
+                <div class="category-card" data-category="computer-vision">
+                    <i class="fas fa-eye category-icon"></i>
+                    <h3>Computer Vision</h3>
+                    <span class="project-count">4 projects</span>
+                    <i class="fas fa-chevron-right expand-icon"></i>
+                </div>
+                <div class="category-card" data-category="machine-learning">
+                    <i class="fas fa-brain category-icon"></i>
+                    <h3>ML Research</h3>
+                    <span class="project-count">1 project</span>
+                    <i class="fas fa-chevron-right expand-icon"></i>
+                </div>
+                <div class="category-card" data-category="mobile-development">
+                    <i class="fas fa-mobile-alt category-icon"></i>
+                    <h3>App Development</h3>
+                    <span class="project-count">3 projects</span>
+                    <i class="fas fa-chevron-right expand-icon"></i>
+                </div>
+            </div>
+
+            <div class="projects-container" id="projects-container">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title gradient-text">Experience & Achievements</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-details">
+                            <h3>Web Development Trainee</h3>
+                            <h4>Corizo, Chennai</h4>
+                            <p class="period">September 2024 - November 2024</p>
+                            <p>Developed "Foodie", a full-stack multi-user web application with comprehensive user and admin modules, featuring cart management, payments, and analytics.</p>
+                        </div>
+                        <div class="lor-document">
+                            <div class="document-card" onclick="window.open('https://res.cloudinary.com/daajhlxgj/image/upload/v1752140262/LOR_Corizo_1751970728640_abs30v.png', '_blank')">
+                                <i class="fas fa-award"></i>
+                                <h4>Letter of Recommendation</h4>
+                                <p>Official recommendation from Corizo Edutech</p>
+                                <span class="view-link">View PDF →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-details">
+                            <h3>Web Developer Intern</h3>
+                            <h4>Prodigy Infotech (Online)</h4>
+                            <p class="period">June 2024 - July 2024</p>
+                            <p>Designed and developed multiple frontend projects including responsive landing pages, interactive applications, and weather app with live API integration.</p>
+                        </div>
+                        <div class="lor-document">
+                            <div class="document-card" onclick="window.open('https://res.cloudinary.com/daajhlxgj/image/upload/v1752140111/prodigy_infotech_Letter_of_Recommendation_1751970745885150401_erlduh.png', '_blank')">
+                                <i class="fas fa-award"></i>
+                                <h4>Letter of Recommendation</h4>
+                                <p>Official recommendation from Prodigy InfoTech</p>
+                                <span class="view-link">View PDF →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="credentials-section">
+                <button class="btn-secondary" id="view-credentials">View Credentials</button>
+            </div>
+
+            <div class="certifications">
+                <h3>Certifications & Achievements</h3>
+                <div class="cert-grid">
+                    <div class="cert-card" data-cert="oracle">
+                        <i class="fas fa-award"></i>
+                        <h4>Oracle SQL Specialist</h4>
+                        <p>Oracle Database SQL Certified Specialist</p>
+                    </div>
+                    <div class="cert-card" data-cert="freecodecamp">
+                        <i class="fas fa-award"></i>
+                        <h4>FreeCodeCamp JavaScript Developer</h4>
+                        <p>JavaScript Algorithms & Data Structures (Beta)</p>
+                    </div>
+                    <div class="cert-card" data-cert="ibm">
+                        <i class="fas fa-award"></i>
+                        <h4>IBM SQL & Relational DB</h4>
+                        <p>SQL and Relational Databases 101</p>
+                    </div>
+                    <div class="cert-card" data-cert="cisco">
+                        <i class="fas fa-award"></i>
+                        <h4>CISCO Networking & Cybersecurity</h4>
+                        <p>CCNA: Enterprise Networking, Security, and Automation</p>
+                    </div>
+                    <div class="cert-card" data-cert="devtown">
+                        <i class="fas fa-award"></i>
+                        <h4>DevTown Campus Ambassador</h4>
+                        <p>Leadership & Community</p>
+                    </div>
+                    <div class="cert-card" data-cert="swayam">
+                        <i class="fas fa-award"></i>
+                        <h4>SWAYAM Python Programming</h4>
+                        <p>Programming in Python - 4 Credit Course</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title gradient-text">Get In Touch</h2>
+            <p class="section-subtitle">Let's collaborate on innovative projects and create something amazing together</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p>Email</p>
+                            <a href="mailto:hesh25012006@gmail.com">hesh25012006@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <p>Phone</p>
+                            <a href="tel:+918754593267">+91 8754593267</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>Location</p>
+                            <span>Chennai, India</span>
+                        </div>
+                    </div>
+
+                    <div class="social-connect">
+                        <h4>Connect With Me</h4>
+                        <div class="social-links">
+                            <a href="https://linkedin.com/in/haresh-bharadwaj-r-566556229" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/hareshbharadwaj" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:hesh25012006@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Haresh Bharadwaj R. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/haresh-bharadwaj-r-566556229" target="_blank">LinkedIn</a>
+                <a href="https://github.com/hareshbharadwaj" target="_blank">GitHub</a>
+                <a href="mailto:hesh25012006@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <div id="credentials-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Experience Credentials</h2>
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <img src="https://res.cloudinary.com/daajhlxgj/image/upload/v1752140115/corizo_li__1751970802230_igdonc.jpg" alt="Corizo LinkedIn Certificate">
+                    <p>Corizo LinkedIn Certificate</p>
+                </div>
+                <div class="credential-item">
+                    <img src="https://res.cloudinary.com/daajhlxgj/image/upload/v1752140111/prodigy_infotech_Certificate_1751970832993_tqtypf.png" alt="Prodigy InfoTech Certificate">
+                    <p>Prodigy InfoTech Certificate</p>
+                </div>
+                <div class="credential-item">
+                    <img src="https://res.cloudinary.com/daajhlxgj/image/upload/v1752165030/Screenshot_2025-07-10_215951_kks4ap.png" alt="Corizo Offer Letter">
+                    <p>Corizo Offer Letter</p>
+                </div>
+                <div class="credential-item">
+                    <img src="https://res.cloudinary.com/daajhlxgj/image/upload/v1752140259/campuss_1751968636489_lfwysq.png" alt="Campus Ambassador Certificate">
+                    <p>Campus Ambassador Certificate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cert-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="cert-modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
