@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import type { Project } from '@shared/schema';
+import type { Project } from '@/data/projects';
 
 interface ProjectModalProps {
   project: Project;

@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, ChevronDown, ChevronRight, ShoppingCart, Eye, Satellite, Utensils, Smartphone, Code, Brain } from 'lucide-react';
+import { ArrowRight, ChevronDown, ChevronRight, ShoppingCart, Eye, Satellite, Utensils, Smartphone, Code, Brain, Users, ClipboardList, CloudSun, Activity, Home, BarChart3 } from 'lucide-react';
 import { ProjectModal } from './project-modal';
-import type { Project } from '@shared/schema';
+import { projectsData, type Project } from '@/data/projects';
 
 const iconMap = {
   'shopping-cart': ShoppingCart,
@@ -13,13 +12,19 @@ const iconMap = {
   'utensils': Utensils,
   'android': Smartphone,
   'code': Code,
+  'users': Users,
+  'clipboard-list': ClipboardList,
+  'cloud-sun': CloudSun,
+  'activity': Activity,
+  'home': Home,
+  'data-analytics': BarChart3,
 };
 
 const colorMap = {
   'web-development': 'from-indigo-500 to-purple-500',
   'computer-vision': 'from-purple-500 to-pink-500',
-  'machine-learning': 'from-blue-500 to-cyan-500',
-  'mobile-development': 'from-orange-500 to-red-500',
+  'ml-research': 'from-blue-500 to-cyan-500',
+  'app-development': 'from-orange-500 to-red-500',
 };
 
 const categoryInfo = {
@@ -33,15 +38,15 @@ const categoryInfo = {
     title: 'Computer Vision',
     icon: Eye,
     description: '',
-    color: ''
+    color: 'text-purple-400'
   },
-  'machine-learning': {
+  'ml-research': {
     title: 'ML Research',
     icon: Brain,
     description: '',
     color: 'text-blue-400'
   },
-  'mobile-development': {
+  'app-development': {
     title: 'App Development',
     icon: Smartphone,
     description: '',
@@ -53,50 +58,19 @@ export function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   
-  const { data: projects, isLoading } = useQuery<Project[]>({
-    queryKey: ['/api/projects'],
-  });
-
-  if (isLoading) {
-    return (
-      <section id="projects" className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text">
-              Featured Projects
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...Array(6)].map((_, i) => (
-              <Card key={i} className="bg-gray-800/50 animate-pulse">
-                <CardContent className="p-6">
-                  <div className="h-48 bg-gray-700 rounded-lg mb-6"></div>
-                  <div className="h-6 bg-gray-700 rounded mb-3"></div>
-                  <div className="h-20 bg-gray-700 rounded mb-4"></div>
-                  <div className="flex gap-2 mb-4">
-                    <div className="h-6 w-16 bg-gray-700 rounded-full"></div>
-                    <div className="h-6 w-16 bg-gray-700 rounded-full"></div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const projects = projectsData;
 
   // Group projects by category
-  const groupedProjects = projects?.reduce((acc, project) => {
+  const groupedProjects = projects.reduce((acc, project) => {
     const category = project.category;
     if (!acc[category]) {
       acc[category] = [];
     }
     acc[category].push(project);
     return acc;
-  }, {} as Record<string, Project[]>) || {};
+  }, {} as Record<string, Project[]>);
 
-  const categoryOrder = ['web-development', 'computer-vision', 'machine-learning', 'mobile-development'];
+  const categoryOrder = ['web-development', 'computer-vision', 'ml-research', 'app-development'];
 
   const toggleCategory = (categoryKey: string) => {
     setExpandedCategory(expandedCategory === categoryKey ? null : categoryKey);
