@@ -18,7 +18,7 @@ const projectsData = {
             links: {
                 linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_webdevelopment-ecommerce-homemadeproducts-activity-7332062155262894080-N79g?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2KRVx3fgY",
                 github: "https://github.com/hareshbharadwaj/Homemade_Marketplace_web",
-                demo: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140275/homemade_1751969238298_iiyqku.mp4"
+                video: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140275/homemade_1751969238298_iiyqku.mp4"
             },
             icon: "fas fa-shopping-cart"
         },
@@ -38,7 +38,7 @@ const projectsData = {
             links: {
                 linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_webdevelopment-firstproject-fullstackdevelopment-activity-7260217850185818112-Q0D5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgy",
                 github: "https://github.com/hareshbharadwaj/foodie-app",
-                demo: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140271/foodie-major_project_1751968207216_mw3ibj.mp4"
+                video: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140271/foodie-major_project_1751968207216_mw3ibj.mp4"
             },
             icon: "fas fa-utensils"
         }
@@ -145,7 +145,8 @@ const projectsData = {
             links: {
                 linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_machinelearning-spacedebris-aerospaceai-activity-7340638750441357315-hYfh?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgY",
                 github: "",
-                paper: ""
+                paper: "",
+                image: "https://res.cloudinary.com/daajhlxgj/image/upload/v1752414175/star_poster_zzkmfs.jpg"
             },
             icon: "fas fa-satellite"
         }
@@ -209,10 +210,41 @@ const projectsData = {
                 github: "https://github.com/hareshbharadwaj/Urban_app/releases/tag/v2.0",
                 demo: ""
             },
-            icon: "fas fa-city"
+            icon: "fas fa-th"
         }
     ]
 };
+
+// JavaScript for ball animation and color change
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+const ball1 = document.getElementById('ball1');
+const ball2 = document.getElementById('ball2');
+const ball3 = document.getElementById('ball3');
+const ball4 = document.getElementById('ball4');
+
+const balls = [ball1, ball2, ball3, ball4];
+
+// Function to change ball color after one full round
+function changeBallColorAfterRound() {
+    const newColor = getRandomColor();
+    balls.forEach(ball => {
+        ball.style.backgroundColor = newColor;
+        ball.style.boxShadow = `0 0 15px ${newColor}, 0 0 30px ${newColor}`;
+    });
+}
+
+// Listen for animation iteration end on one of the balls (assuming all have same duration)
+// This is a simplified approach. A more robust solution might involve tracking animation progress.
+ball1.addEventListener('animationiteration', changeBallColorAfterRound);
 
 // Certificate data
 const certificatesData = {
@@ -376,6 +408,15 @@ function initNavigation() {
             }
         });
     });
+
+    // Smooth transition for skill cards to projects section
+    document.querySelectorAll('.skill-card').forEach(card => {
+        card.addEventListener('click', function() {
+            document.querySelector('#projects').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 }
 
 // Projects functionality
@@ -413,7 +454,9 @@ function loadProjects(category) {
     projectsContainer.innerHTML = projects.map(project => `
         <div class="project-card" onclick="openProjectModal('${category}', '${project.title}')">
             <div class="project-image">
-                ${project.links.video ? 
+                ${project.links.image ? 
+                    `<img src="${project.links.image}" alt="${project.title}" class="project-thumbnail">` :
+                project.links.video ? 
                     `<video autoplay muted loop>
                         <source src="${project.links.video}" type="video/mp4">
                     </video>` :
@@ -470,7 +513,12 @@ function openProjectModal(category, title) {
             ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
         </div>
         
-        ${project.links.video && category === 'computer-vision' ? `
+        ${project.links.image ? `
+            <h3>Project Image</h3>
+            <div class="image-container">
+                <img src="${project.links.image}" alt="${project.title}" style="width: 100%; border-radius: 0.5rem;">
+            </div>
+        ` : project.links.video && (category === 'computer-vision' || category === 'web-development') ? `
             <h3>Project Demo</h3>
             <div class="video-container">
                 <video controls style="width: 100%; max-height: 400px; border-radius: 0.5rem;">
@@ -522,21 +570,15 @@ function openProjectModal(category, title) {
                             `<p>Repository link coming soon</p>`
                         }
                     </div>
-                    <div class="link-card">
-                        <h4>${category === 'computer-vision' ? 'Video Demo' : 'Live Demo'}</h4>
-                        ${project.links.demo || project.links.video ? 
-                            `<a href="${project.links.demo || project.links.video}" target="_blank" class="btn-secondary">
-                                <i class="fas fa-external-link-alt"></i> ${category === 'computer-vision' ? 'Watch Demo' : 'View Demo'}
-                            </a>` :
-                            `<p>${category === 'computer-vision' ? 'Video demo coming soon' : 'Demo link coming soon'}</p>`
-                        }
-                    </div>
+                    ${category === 'computer-vision' ? '' : `
+
+                    `}
                 </div>
             `}
         </div>
     `;
     
-    modal.style.display = 'block';
+    modal.classList.add('show-modal');
 }
 
 // Modal functionality
@@ -547,7 +589,7 @@ function initModals() {
     closeButtons.forEach(button => {
         button.addEventListener('click', () => {
             modals.forEach(modal => {
-                modal.style.display = 'none';
+                modal.classList.remove('show-modal');
             });
         });
     });
@@ -565,7 +607,7 @@ function initModals() {
 function initCredentials() {
     viewCredentialsBtn.addEventListener('click', () => {
         const modal = document.getElementById('credentials-modal');
-        modal.style.display = 'block';
+        modal.classList.add('show-modal');
     });
     
     // Certificate cards
@@ -586,7 +628,7 @@ function initCredentials() {
                     </div>
                 `;
                 
-                modal.style.display = 'block';
+                modal.classList.add('show-modal');
             }
         });
     });
@@ -656,6 +698,8 @@ function initScrollAnimations() {
     });
 }
 
+
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initBackgroundAnimation();
@@ -665,8 +709,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initCredentials();
     initContactForm();
     initScrollAnimations();
+    initSkillToggles();
 });
-
 // Add some additional CSS for modal content
 const additionalStyles = `
     .project-description {
@@ -736,6 +780,63 @@ const additionalStyles = `
         text-align: center;
         margin-top: 2rem;
     }
+
+    // Background video playback logic
+    const video1 = document.getElementById('background-video-1');
+    const videoMobile = document.getElementById('background-video-mobile');
+
+    function setupVideoListeners() {
+        if (video1) {
+            video1.onended = () => {
+                video1.currentTime = 0; // Loop video1
+                video1.play().catch(e => console.error("Error playing video1:", e));
+            };
+        }
+    }
+
+    function handleVideoDisplayAndPlayback() {
+        const isLaptopView = window.matchMedia('(min-width: 1024px)').matches;
+
+        if (isLaptopView) {
+            // Laptop view: Show video1 and video2, hide mobile video
+            if (videoMobile) {
+                videoMobile.style.display = 'none';
+                videoMobile.pause();
+            }
+
+            if (video1) {
+                video1.style.display = 'block';
+                if (video1.paused) video1.play().catch(e => console.error("Error playing video1:", e));
+            }
+
+        } else {
+            // Non-laptop view: Show mobile video, hide video1 and video2
+            if (video1) {
+                video1.style.display = 'none';
+                video1.pause();
+            }
+
+
+            if (videoMobile) {
+                console.log('Attempting to show mobile video');
+                videoMobile.style.display = 'block';
+                if (videoMobile.paused) {
+                    videoMobile.play().catch(e => console.error("Error playing videoMobile:", e));
+                }
+            }
+        }
+    }
+
+    // Setup listeners once DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        setupVideoListeners();
+        handleVideoDisplayAndPlayback();
+    });
+
+    // Update on window resize
+    window.addEventListener('resize', handleVideoDisplayAndPlayback);
+
+});
 `;
 
 // Add the additional styles to the page

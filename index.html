@@ -8,6 +8,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <video autoplay muted loop id="background-video-1" class="background-video">
+        <source src="https://kritrimvault.com/wp-content/uploads/2023/01/videos/HUD_Videos/Set1/3d_torch_4k/output/3d_torch__Preview.webm#t=0.001" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <video autoplay muted loop id="background-video-mobile" class="background-video">
+        <source src="https://www.shutterstock.com/shutterstock/videos/3651853547/preview/stock-footage-line-and-grid-based-hud-graphics-with-radar-type-pulsing-circular-arrays-and-particle-motion.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="video-overlay"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -45,6 +56,12 @@
         <div class="hero-container">
             <div class="hero-image">
                 <img src="https://res.cloudinary.com/daajhlxgj/image/upload/v1752134349/WhatsApp_Image_2025-07-08_at_13.00.00_58121156_srgf5p.jpg" alt="Haresh Bharadwaj R" class="profile-img">
+                <div class="profile-border-animation">
+                    <span class="ball" id="ball1"></span>
+                    <span class="ball" id="ball2"></span>
+                    <span class="ball" id="ball3"></span>
+                    <span class="ball" id="ball4"></span>
+                </div>
             </div>
             <div class="hero-content">
                 <h1 class="hero-title gradient-text">Haresh Bharadwaj R</h1>
@@ -86,29 +103,51 @@
                 I'm a technically driven Information Technology undergraduate with a passion for solving real-world challenges through innovative technology solutions. My expertise spans across Machine Learning, AI, Computer Vision, and Web Development, with a focus on building AI-based solutions that enhance user experiences.
             </p>
 
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-brain skill-icon"></i>
-                    <h3>Machine Learning</h3>
-                    <p>AI / ML Solutions</p>
+            <div class="skills-list">
+                <div class="skill-category">
+                    <input type="checkbox" id="technical-skills-toggle" class="toggle-checkbox" hidden>
+                    <label for="technical-skills-toggle" class="toggle-header">
+                        <h3>Technical Skills</h3>
+                        <span class="toggle-button"></span>
+                    </label>
+                    <div class="skill-content" id="technical-skills-content">
+                        <ul class="soft-skills-list">
+                            <li>Python</li>
+                            <li>R</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>Docker</li>
+                            <li>Git</li>
+                            <li>Flutter</li>
+                            <li>Streamlit</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-eye skill-icon"></i>
-                    <h3>Computer Vision</h3>
-                    <p>| OpenCV | MediaPipe | PyCharm |</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-code skill-icon"></i>
-                    <h3>Web Design</h3>
-                    <p>| React | Streamlit | MySQL | MongoDB |</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-mobile-alt skill-icon"></i>
-                    <h3>Mobile Development</h3>
-                    <p>Android Studio & Flutter</p>
+                <div class="skill-category">
+                    <input type="checkbox" id="soft-skills-toggle" class="toggle-checkbox" hidden>
+                    <label for="soft-skills-toggle" class="toggle-header">
+                        <h3>Soft Skills</h3>
+                        <span class="toggle-button"></span>
+                    </label>
+                    <div class="skill-content" id="soft-skills-content">
+                        <ul>
+                            <li>Prompt Management</li>
+                            <li>Time Management</li>
+                            <li>Problem Solving</li>
+                            <li>Adaptability</li>
+                            <li>Teamwork</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
+<br>
             <div class="education-card">
                 <h3>Education</h3>
                 <div class="education-item">
@@ -129,7 +168,7 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title gradient-text">Featured Projects</h2>
-            <p class="section-subtitle">Click on each category to explore my projects</p>
+            <p class="section-subtitle">Click on each category to explore my projects (scroll below) </p>
 
             <div class="category-grid">
                 <div class="category-card" data-category="web-development">
@@ -170,7 +209,7 @@
             <h2 class="section-title gradient-text">Experience & Achievements</h2>
             
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item prodigy-timeline-item">
                     <div class="timeline-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -198,16 +237,16 @@
                     </div>
                     <div class="timeline-content">
                         <div class="experience-details">
-                            <h3>Web Developer Intern</h3>
-                            <h4>Prodigy Infotech (Online)</h4>
-                            <p class="period">June 2024 - July 2024</p>
-                            <p>Designed and developed multiple frontend projects including responsive landing pages, interactive applications, and weather app with live API integration.</p>
+                            <h3>Web Development Intern</h3>
+                            <h4>Prodigy Infotech</h4>
+                            <p class="period">July 2024 - August 2024</p>
+                            <p>Developed and maintained web applications, focusing on front-end and back-end integration. Contributed to various projects, enhancing user interfaces and optimizing database interactions.</p>
                         </div>
                         <div class="lor-document">
                             <div class="document-card" onclick="window.open('https://res.cloudinary.com/daajhlxgj/image/upload/v1752140111/prodigy_infotech_Letter_of_Recommendation_1751970745885150401_erlduh.png', '_blank')">
                                 <i class="fas fa-award"></i>
                                 <h4>Letter of Recommendation</h4>
-                                <p>Official recommendation from Prodigy InfoTech</p>
+                                <p>Official recommendation from Prodigy Infotech</p>
                                 <span class="view-link">View PDF →</span>
                             </div>
                         </div>
@@ -221,6 +260,7 @@
 
             <div class="certifications">
                 <h3>Certifications & Achievements</h3>
+                <p class="section-subtitle">Click to view Certificates -></p>
                 <div class="cert-grid">
                     <div class="cert-card" data-cert="oracle">
                         <i class="fas fa-award"></i>
@@ -266,65 +306,24 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <p>Email</p>
-                            <a href="mailto:hesh25012006@gmail.com">hesh25012006@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <p>Phone</p>
-                            <a href="tel:+918754593267">+91 8754593267</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <p>Location</p>
-                            <span>Chennai, India</span>
-                        </div>
-                    </div>
+                    <p><i class="fas fa-envelope"></i> hesh25012006@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8754593267</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
 
-                    <div class="social-connect">
-                        <h4>Connect With Me</h4>
-                        <div class="social-links">
-                            <a href="https://linkedin.com/in/haresh-bharadwaj-r-566556229" target="_blank" class="social-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/hareshbharadwaj" target="_blank" class="social-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="mailto:hesh25012006@gmail.com" class="social-link">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/haresh-bharadwaj-r-566556229" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/hareshbharadwaj" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:hesh25012006@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="contact-form">
-                    <h3>Send Message</h3>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+
             </div>
         </div>
     </section>
