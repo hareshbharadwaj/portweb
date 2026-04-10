@@ -41,6 +41,27 @@ const projectsData = {
                 video: "https://res.cloudinary.com/daajhlxgj/video/upload/v1752140271/foodie-major_project_1751968207216_mw3ibj.mp4"
             },
             icon: "fas fa-utensils"
+        },
+        {
+            title: "Web-Based Cryptography System for E-Certificate Issuance and Verification",
+            description: "Secure digital certificate platform using SHA hashing, PGP encryption, and QR codes for tamper-proof verification.",
+            detailedDescription: "A comprehensive secure and tamper-proof digital certificate platform built using modern web and cryptographic techniques. This system demonstrates the integration of web technologies with advanced cryptography to solve real-world problems like certificate forgery and secure digital validation.",
+            features: [
+                "Certificate data conversion to standardized format with SHA-256 hashing for data integrity",
+                "PGP-based asymmetric encryption to protect certificate authenticity and prevent unauthorized duplication",
+                "QR code technology integration for fast, real-time verification through web interfaces",
+                "Verification workflow with scanned data decryption and hash comparison",
+                "Tamper detection and certificate authenticity validation",
+                "Real-time certificate verification system",
+                "Support for academic certifications, corporate credentials, and digital document verification"
+            ],
+            technologies: ["React.js", "Node.js", "SHA-256 Hashing", "PGP Encryption", "QR Code Library", "Express.js", "HTML/CSS", "JavaScript"],
+            links: {
+                linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_qr-ugcPost-7448263808663330819-m-Jv?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgY",
+                github: "",
+                demo: "https://res.cloudinary.com/daajhlxgj/image/upload/v1775797691/HARESH_CV_page-0001_lbgumj.jpg"
+            },
+            icon: "fas fa-certificate"
         }
     ],
     'computer-vision': [
