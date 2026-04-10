@@ -247,12 +247,7 @@ function getRandomColor() {
     return color;
 }
 
-const ball1 = document.getElementById('ball1');
-const ball2 = document.getElementById('ball2');
-const ball3 = document.getElementById('ball3');
-const ball4 = document.getElementById('ball4');
-
-const balls = [ball1, ball2, ball3, ball4];
+const balls = Array.from(document.querySelectorAll('.ball'));
 
 // Function to change ball color after one full round
 function changeBallColorAfterRound() {
@@ -263,9 +258,10 @@ function changeBallColorAfterRound() {
     });
 }
 
-// Listen for animation iteration end on one of the balls (assuming all have same duration)
-// This is a simplified approach. A more robust solution might involve tracking animation progress.
-ball1.addEventListener('animationiteration', changeBallColorAfterRound);
+// Attach animation listener only if the balls exist
+if (balls.length > 0) {
+    balls[0].addEventListener('animationiteration', changeBallColorAfterRound);
+}
 
 // Certificate data
 const certificatesData = {
