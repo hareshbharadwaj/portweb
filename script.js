@@ -59,8 +59,16 @@ const projectsData = {
             links: {
                 linkedin: "https://www.linkedin.com/posts/haresh-bharadwaj-r-566556229_qr-ugcPost-7448263808663330819-m-Jv?utm_source=share&utm_medium=member_desktop&rcm=ACoAADk2TJ4BoYYKu_vTPlvJrxFLYD2kRVx3fgY",
                 github: "",
-                demo: "https://res.cloudinary.com/daajhlxgj/image/upload/v1775797691/HARESH_CV_page-0001_lbgumj.jpg"
+                demo: "https://res.cloudinary.com/daajhlxgj/image/upload/v1775807888/WhatsApp_Image_2026-04-10_at_12.25.13_PM_pjebae.jpg"
             },
+            gallery: [
+                "https://res.cloudinary.com/daajhlxgj/image/upload/v1775807894/WhatsApp_Image_2026-04-10_at_12.25.08_PM_lbkkt0.jpg",
+                "https://res.cloudinary.com/daajhlxgj/image/upload/v1775807887/WhatsApp_Image_2026-04-10_at_12.25.16_PM_uwvzn9.jpg",
+                "https://res.cloudinary.com/daajhlxgj/image/upload/v1775807888/WhatsApp_Image_2026-04-10_at_12.25.12_PM_tooylc.jpg",
+                "https://res.cloudinary.com/daajhlxgj/image/upload/v1775807888/WhatsApp_Image_2026-04-10_at_12.25.13_PM_pjebae.jpg",
+                "https://res.cloudinary.com/daajhlxgj/image/upload/v1775807895/WhatsApp_Image_2026-04-10_at_12.25.14_PM_om6uzp.jpg",
+                "https://res.cloudinary.com/daajhlxgj/image/upload/v1775807894/WhatsApp_Image_2026-04-10_at_12.25.14_PM_1_t9zujd.jpg"
+            ],
             icon: "fas fa-certificate"
         }
     ],
@@ -477,6 +485,8 @@ function loadProjects(category) {
                     `<video autoplay muted loop>
                         <source src="${project.links.video}" type="video/mp4">
                     </video>` :
+                project.links.demo && project.title.includes('Cryptography') ?
+                    `<img src="${project.links.demo}" alt="${project.title}" class="project-thumbnail">` :
                     `<i class="${project.icon}"></i>`
                 }
             </div>
@@ -535,13 +545,22 @@ function openProjectModal(category, title) {
             <div class="image-container">
                 <img src="${project.links.image}" alt="${project.title}" style="width: 100%; border-radius: 0.5rem;">
             </div>
-        ` : project.links.video && (category === 'computer-vision' || category === 'web-development') ? `
+        ` : project.links.video && (category === 'computer-vision' || category === 'web-development') && !project.gallery ? `
             <h3>Project Demo</h3>
             <div class="video-container">
                 <video controls style="width: 100%; max-height: 400px; border-radius: 0.5rem;">
                     <source src="${project.links.video}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+            </div>
+        ` : project.gallery ? `
+            <h3>Project Gallery</h3>
+            <div class="gallery-carousel" style="display: flex; overflow-x: auto; gap: 1rem; padding: 1rem; background: rgba(51, 65, 85, 0.2); border-radius: 0.75rem; scroll-behavior: smooth;">
+                ${project.gallery.map((img, idx) => `
+                    <div style="flex: 0 0 auto; width: 300px; height: 200px; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+                        <img src="${img}" alt="Gallery ${idx + 1}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                `).join('')}
             </div>
         ` : ''}
         
