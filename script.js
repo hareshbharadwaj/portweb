@@ -732,6 +732,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSkillToggles();
 });
+
+function initSkillToggles() {
+    // Skill toggles are handled by HTML/CSS checkbox toggles.
+}
+
 // Add some additional CSS for modal content
 const additionalStyles = `
     .project-description {
@@ -801,9 +806,10 @@ const additionalStyles = `
         text-align: center;
         margin-top: 2rem;
     }
+`;
 
-    // Background video playback logic
-    const video1 = document.getElementById('background-video-1');
+// Background video playback logic
+const video1 = document.getElementById('background-video-1');
     const videoMobile = document.getElementById('background-video-mobile');
 
     function setupVideoListeners() {
@@ -856,9 +862,6 @@ const additionalStyles = `
 
     // Update on window resize
     window.addEventListener('resize', handleVideoDisplayAndPlayback);
-
-});
-`;
 
 // Add the additional styles to the page
 const styleSheet = document.createElement('style');
